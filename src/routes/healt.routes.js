@@ -12,4 +12,4 @@ healt.get("/", (req, res, next) => {
   }
 });
 
-export { healt };
+export default healt ;

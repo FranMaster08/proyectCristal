@@ -1,5 +1,9 @@
 import { userEntity } from "../entities/index.js";
 
-const { getUsers } = userEntity
+ const getAllUsers = async () => {
+  return await userEntity.getUsers();
+};
 
-getUsers().then(console.table)
+export default {
+  getAllUsers
+}

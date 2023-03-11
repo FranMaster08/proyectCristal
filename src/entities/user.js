@@ -30,7 +30,7 @@ export const getUsers = async () => {
     const [rows] = await connection.query(
       "SELECT * FROM user order by created_at desc"
     );
-
+    if (rows.length === 0) throw new Error(`Not Found`)
     return rows.map(
       (row = User) =>
         new User(
