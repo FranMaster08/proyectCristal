@@ -1,0 +1,16 @@
+services:
+  cristals:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'cristal'
+      MYSQL_USER: 'fran'
+      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: '1234'
+    volumes:
+      # Montamos un volumen para MySQL para no perder los datos de bd
+      - ./volumenes/cristal:/var/lib/mysql
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    platform: linux/x86_64
